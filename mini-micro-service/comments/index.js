@@ -1,6 +1,7 @@
 const express = require('express');
 const { randomBytes } = require('crypto')
 const morgan = require('morgan');
+const cors = require('cors');
 const app = express();
 
 app.use(express.urlencoded({extended: true})); 
