@@ -12,7 +12,7 @@ app.use(morgan('dev'))
 
 const commentsByPostId = {};
 
-app.get('/posts/:id/comments', (req, res) => {
+app.get('/posts/:id/comments', async (req, res) => {
   res.send(commentsByPostId[req.params.id] || []);
 });
 
@@ -49,7 +49,7 @@ app.post('/events', (req, res) => {
   res.send({})
 })
 
-const COMMENTPORT = process.env.COMMENTPORT || 3003
+const COMMENTPORT = process.env.COMMENTPORT || 4001
 
 app.listen(COMMENTPORT, () => console.log(`Comment Service Listening on ${COMMENTPORT}`))
 
