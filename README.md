@@ -10,7 +10,7 @@ This is an example project to demonstrate a micro service architecture
 
 - kubernetes
 
-### macOS
+### macOS Kubernetes Version
 
 ```bash
 ❯ kubectl version
