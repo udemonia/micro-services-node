@@ -4,6 +4,34 @@ Routing Rules between services with ingress/nginx
 
 <https://kubernetes.github.io/ingress-nginx/>
 
+How can the browser make requests to our backend services?
+
+We could expose each service with a node port but that isn't done in serious production apps
+
+Instead, we use a load balancing service
+
+_LOAD BALANCING SERVICE_: it tells kubernetes to reach out to its provider and provision a load balancer. Gets traffic to a single pod
+
+_INGRESS CONTROLLER_: A pod with a set of routing rules to distribute traffic to other services
+
+We're going to use the ingress Nginx controller
+
+It's essentially a pod that understands the request, then forwards it on to the correct ip cluster/pod
+
+<https://kubernetes.github.io/ingress-nginx/deploy/#provider-specific-steps>
+
+## installing ingress controller
+
+Load Balancing + Ingress Controller
+
+<https://kubernetes.github.io/ingress-nginx/deploy/#quick-start>
+
+this install is essentially a yaml file...
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.48.1/deploy/static/provider/cloud/deploy.yaml
+```
+
 ---
 
 You may encounter a warning or error about the v1beta1 API version that is being used.
